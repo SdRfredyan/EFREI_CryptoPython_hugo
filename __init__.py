@@ -40,3 +40,17 @@ def exercice1():
 @app.route('/exercice2')
 def exercice2():
     return render_template('exercice2.html')
+
+
+@app.route('/exercice3')
+def exercice3():
+    return render_template('exercice3.html')
+
+
+@app.route('/exercice4')
+def exercice4():
+    return render_template('exercice4.html')
+
+@app.route('/exercice5')
+def exercice5():
+    return render_template('exercice5.html')
