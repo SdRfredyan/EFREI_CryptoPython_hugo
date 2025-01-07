@@ -33,5 +33,5 @@ if __name__ == "__main__":
   app.run(debug=True)
   
 @app.route('/exercice1')
-def hello_world():
+def exercice1():
     return render_template('exercice1.html')
