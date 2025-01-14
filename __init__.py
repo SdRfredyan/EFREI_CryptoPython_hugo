@@ -34,7 +34,7 @@ if __name__ == "__main__":
   
 @app.route('/exercice1')
 def exercice1():
-    return render_template('exercice1.svg')
+    return render_template('exercice1.html')
 
 
 @app.route('/exercice2')
@@ -65,4 +65,4 @@ def maison():
 
 @app.route('/trefle')
 def trefle():
-    return render_template('trefle.html')
+    return render_template('trefle.svg')
