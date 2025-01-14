@@ -62,3 +62,7 @@ def exemple():
 @app.route('/maison')
 def maison():
     return render_template('maison.html')
+
+@app.route('/trefle')
+def trefle():
+    return render_template('trefle.html')
