@@ -54,3 +54,7 @@ def exercice4():
 @app.route('/exercice5')
 def exercice5():
     return render_template('exercice5.html')
+
+@app.route('/exemple')
+def exemple():
+    return render_template('Exemple_Base_SVG.html')
