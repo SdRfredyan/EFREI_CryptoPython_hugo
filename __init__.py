@@ -66,3 +66,7 @@ def maison():
 @app.route('/trefle')
 def trefle():
     return render_template('jack.svg')
+  
+@app.route('/chenille')
+def chenille():
+    return render_template('chenille.html')
