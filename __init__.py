@@ -58,3 +58,7 @@ def exercice5():
 @app.route('/exemple')
 def exemple():
     return render_template('Exemple_Base_SVG.html')
+  
+@app.route('/maison')
+def maison():
+    return render_template('maison.html')
