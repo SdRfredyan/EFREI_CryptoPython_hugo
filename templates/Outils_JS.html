@@ -8,10 +8,10 @@ function affichage(){
 		document.getElementById('image1Image').style.display = 'block';
 			}
 	if(document.getElementById('image2Image').checked){
-		
+		document.getElementById('image2Image').style.display = 'block';
 		}
 	if(document.getElementById('image3Image').checked){
-		
+		document.getElementById('image3Image').style.display = 'block';
 		}
 }
 function cacher(){
@@ -45,9 +45,9 @@ function controler(){
 <p>Image3<input type="checkbox" id="image3Image"></p>
 <button onclick="controler()">Check</button>
 <h1>Image Example</h1>
-<img src="{{ url_for('static', filename='images/1.jpg') }}" alt="Logo".display="None">
-<img src="{{ url_for('static', filename='images/2.jpeg') }}" alt="Logo">
-<img src="{{ url_for('static', filename='images/3.jpg') }}" alt="Logo">
+<img src="{{ url_for('static', filename='images/1.jpg') }}" alt="Logo" style="display: none;">
+<img src="{{ url_for('static', filename='images/2.jpeg') }}" alt="Logo" style="display: none;">
+<img src="{{ url_for('static', filename='images/3.jpg') }}" alt="Logo" style="display: none;">
 
 
 </body>
