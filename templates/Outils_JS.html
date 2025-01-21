@@ -2,7 +2,7 @@
 <head>
 <script>
 function affichage(){
-	alert("Tout es OK !");
+	alert("Bouton qui marche");
 }
 function cacher(){
 	document.getElementById('DuTexte').style.display="None";
@@ -30,7 +30,7 @@ function controler(){
 <h1>Mes outils</h1>
 <hr/>
 <h2>Boite de dialogue</h2>
-<button onclick="affichage()">Afficher</button>
+<button onclick="affichage()">Bouton</button>
 <hr/>
 <p id="DuTexte">Ma phrase de texte</p>
 <button onclick="presenter()">Presenter</button>
@@ -39,7 +39,7 @@ function controler(){
 <p>Image1<input type="checkbox" id="image1Image"></p>
 <p>Image2<input type="checkbox" id="image2Image"></p>
 <p>Image3<input type="checkbox" id="image3Image"></p>
-<button onclick="controler()">Check</button>
+<button onclick="controler()">Afficher</button>
 <h1>Image Example</h1>
 <img id="image1" src="{{ url_for('static', filename='images/1.jpg') }}" alt="Logo" style="display: none; width: 300px; height: auto;">
 <img id="image2" src="{{ url_for('static', filename='images/2.jpeg') }}" alt="Logo" style="display: none; width: 300px; height: auto;">
