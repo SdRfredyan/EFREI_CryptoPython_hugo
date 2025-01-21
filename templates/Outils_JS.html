@@ -3,16 +3,6 @@
 <script>
 function affichage(){
 	alert("Tout es OK !");
-	
-	if(document.getElementById('image1Image').checked){
-		document.getElementById('image1Image').style.display = 'block';
-			}
-	if(document.getElementById('image2Image').checked){
-		document.getElementById('image2Image').style.display = 'block';
-		}
-	if(document.getElementById('image3Image').checked){
-		document.getElementById('image3Image').style.display = 'block';
-		}
 }
 function cacher(){
 	document.getElementById('DuTexte').style.display="None";
@@ -22,10 +12,16 @@ function presenter(){
 }
 
 function controler(){
-	if(document.getElementById('Control').checked){
-			alert("Bouton option coché");
+		
+	if(document.getElementById('image1Image').checked){
+		document.getElementById('image1Image').style.display = 'block';
+			}
+	if(document.getElementById('image2Image').checked){
+		document.getElementById('image2Image').style.display = 'block';
 		}
-	else{alert("Bouton option NON coché");}		
+	if(document.getElementById('image3Image').checked){
+		document.getElementById('image3Image').style.display = 'block';
+		}	
 }
 
 </script>
