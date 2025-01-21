@@ -3,6 +3,10 @@
 <script>
 function affichage(){
 	alert("Tout es OK !");
+	if(document.getElementById('image1Image').checked){
+		<img src="{{ url_for('static', filename='images/1.jpg') }}" alt="Logo">
+			alert("image");
+		}
 }
 function cacher(){
 	document.getElementById('DuTexte').style.display="None";
@@ -30,11 +34,13 @@ function controler(){
 <button onclick="presenter()">Presenter</button>
 <button onclick="cacher()">Cacher</button>
 <hr/>
-<p>Image1<input type="checkbox" id="Control"></p>
-<p>Image2<input type="checkbox" id="Control"></p>
-<p>Image3<input type="checkbox" id="Control"></p>
+<p>Image1<input type="checkbox" id="image1Image"></p>
+<p>Image2<input type="checkbox" id="image2Image"></p>
+<p>Image3<input type="checkbox" id="image3Image"></p>
 <button onclick="controler()">Check</button>
 
+
+<img src="{{ url_for('static', filename='images/monimage.png') }}" alt="Logo">
 
 </body>
 </html>
