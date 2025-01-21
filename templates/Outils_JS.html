@@ -21,7 +21,17 @@ function controler(){
 		}
 	if(document.getElementById('image3Image').checked){
 		document.getElementById('image3').style.display = 'block';
-		}	
+		}
+	function controler(){
+		if(document.getElementById('image1Image').checked){
+		document.getElementById('image1').style.display = 'none';
+			}
+	if(document.getElementById('image2Image').checked){
+		document.getElementById('image2').style.display = 'none';
+		}
+	if(document.getElementById('image3Image').checked){
+		document.getElementById('image3').style.display = 'none';
+	}
 }
 
 </script>
@@ -39,7 +49,7 @@ function controler(){
 <p>Image1<input type="checkbox" id="image1Image"></p>
 <p>Image2<input type="checkbox" id="image2Image"></p>
 <p>Image3<input type="checkbox" id="image3Image"></p>
-<button onclick="controler()">Afficher</button>
+<button onclick="controler()">Afficher</button> <button onclick="masq()">masquer</button>
 <h1>Image Example</h1>
 <img id="image1" src="{{ url_for('static', filename='images/1.jpg') }}" alt="Logo" style="display: none; width: 300px; height: auto;">
 <img id="image2" src="{{ url_for('static', filename='images/2.jpeg') }}" alt="Logo" style="display: none; width: 300px; height: auto;">
