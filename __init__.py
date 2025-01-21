@@ -73,5 +73,5 @@ def chenille():
   
 @app.route('/jeu_de_des')
 def jeu():
-    return render_template('Jeu_Des_Base(2).html')
+    return render_template('Jeu_Des_Base (2).html')
 
