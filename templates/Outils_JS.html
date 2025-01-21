@@ -14,13 +14,13 @@ function presenter(){
 function controler(){
 		
 	if(document.getElementById('image1Image').checked){
-		document.getElementById('image1Image').style.display = 'block';
+		document.getElementById('image1').style.display = 'block';
 			}
 	if(document.getElementById('image2Image').checked){
-		document.getElementById('image2Image').style.display = 'block';
+		document.getElementById('image2').style.display = 'block';
 		}
 	if(document.getElementById('image3Image').checked){
-		document.getElementById('image3Image').style.display = 'block';
+		document.getElementById('image3').style.display = 'block';
 		}	
 }
 
@@ -41,9 +41,9 @@ function controler(){
 <p>Image3<input type="checkbox" id="image3Image"></p>
 <button onclick="controler()">Check</button>
 <h1>Image Example</h1>
-<img src="{{ url_for('static', filename='images/1.jpg') }}" alt="Logo" style="display: none; width: 300px; height: auto;">
-<img src="{{ url_for('static', filename='images/2.jpeg') }}" alt="Logo" style="display: none; width: 300px; height: auto;">
-<img src="{{ url_for('static', filename='images/3.jpg') }}" alt="Logo" style="display: none; width: 300px; height: auto;">
+<img id="image1" src="{{ url_for('static', filename='images/1.jpg') }}" alt="Logo" style="display: none; width: 300px; height: auto;">
+<img id="image2" src="{{ url_for('static', filename='images/2.jpeg') }}" alt="Logo" style="display: none; width: 300px; height: auto;">
+<img id="image3" src="{{ url_for('static', filename='images/3.jpg') }}" alt="Logo" style="display: none; width: 300px; height: auto;">
 
 
 
