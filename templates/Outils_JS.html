@@ -3,14 +3,15 @@
 <script>
 function affichage(){
 	alert("Tout es OK !");
+	
 	if(document.getElementById('image1Image').checked){
-		<img src="{{ url_for('static', filename='images/1.jpg') }}" alt="Logo">
-		}
+		document.getElementById('image1Image').style.display = 'block';
+			}
 	if(document.getElementById('image2Image').checked){
-		<img src="{{ url_for('static', filename='images/2.jpeg') }}" alt="Logo">
+		
 		}
 	if(document.getElementById('image3Image').checked){
-		<img src="{{ url_for('static', filename='images/3.jpg') }}" alt="Logo">
+		
 		}
 }
 function cacher(){
@@ -43,10 +44,10 @@ function controler(){
 <p>Image2<input type="checkbox" id="image2Image"></p>
 <p>Image3<input type="checkbox" id="image3Image"></p>
 <button onclick="controler()">Check</button>
-
- <h1>Image Example</h1>
-    <img src="{{ url_for('static', filename='images/1.jpg') }}" alt="Logo">
-
+<h1>Image Example</h1>
+<img src="{{ url_for('static', filename='images/1.jpg') }}" alt="Logo".display="None">
+<img src="{{ url_for('static', filename='images/2.jpeg') }}" alt="Logo">
+<img src="{{ url_for('static', filename='images/3.jpg') }}" alt="Logo">
 
 
 </body>
