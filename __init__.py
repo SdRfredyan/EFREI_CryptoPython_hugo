@@ -70,3 +70,8 @@ def trefle():
 @app.route('/chenille')
 def chenille():
     return render_template('chenille.html')
+  
+@app.route('/jeu_de_des')
+def jeu():
+    return render_template('Jeu_Des_Base.html')
+
