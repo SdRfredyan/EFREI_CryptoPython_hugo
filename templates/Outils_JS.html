@@ -5,7 +5,12 @@ function affichage(){
 	alert("Tout es OK !");
 	if(document.getElementById('image1Image').checked){
 		<img src="{{ url_for('static', filename='images/1.jpg') }}" alt="Logo">
-			alert("image");
+		}
+	if(document.getElementById('image2Image').checked){
+		<img src="{{ url_for('static', filename='images/2.jpeg') }}" alt="Logo">
+		}
+	if(document.getElementById('image3Image').checked){
+		<img src="{{ url_for('static', filename='images/3.jpg') }}" alt="Logo">
 		}
 }
 function cacher(){
@@ -40,7 +45,6 @@ function controler(){
 <button onclick="controler()">Check</button>
 
 
-<img src="{{ url_for('static', filename='images/monimage.png') }}" alt="Logo">
 
 </body>
 </html>
