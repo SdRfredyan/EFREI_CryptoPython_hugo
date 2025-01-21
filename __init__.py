@@ -75,3 +75,8 @@ def chenille():
 def jeu():
     return render_template('Jeu_Des_Base.html')
 
+@app.route('/bibliotheque_images')
+def img():
+    return render_template('Outils_JS.html')
+  
+
