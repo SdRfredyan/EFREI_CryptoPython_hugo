@@ -9,7 +9,6 @@
 
         function lancer() {
            
-
             // Générer un chiffre aléatoire entre 1 et 6
             const chiffre = Math.floor(Math.random() * 6) + 1;
             alert("Le barillet tourne... Chambre sélectionnée : " + chiffre);
@@ -47,6 +46,20 @@
                 alert("Vous avez sélectionné la chambre : " + num);
             }
         }
+
+function rejouer() {
+    // Réinitialiser les couleurs de toutes les chambres
+            for (let i = 1; i <= 6; i++) {
+                const cercle = document.getElementById("Br" + i);
+                cercle.setAttribute("fill", "gray");
+            }
+
+            // Réinitialiser le compteur des chambres sélectionnées
+            chambresSelectionnees = 0;
+
+            alert("Le jeu a été réinitialisé !");
+        }
+        
     </script>
 </head>
 <body>
@@ -64,5 +77,6 @@
     </svg>
 
     <button onclick="lancer()">Jouer</button>
+    <button onclick="rejouer()">Rejouer</button>
 </body>
 </html>
