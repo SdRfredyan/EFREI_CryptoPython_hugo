@@ -4,8 +4,14 @@
 function lancer(){
 	const chiffre = Math.floor(Math.random() * 6) + 1;
           alert("Le barillet tourne... Chambre sélectionnée : " + chiffre);
-            chambreRouge = chiffre; // Stocker le numéro de la chambre rouge
-	
+        
+	if(document.getElementById("Br"+Val).style.fill=="red")
+	{
+		alert("Perdu");
+	}
+	else{
+		alert("Gagné");
+	}
 	
 }
 
@@ -14,13 +20,7 @@ function afficherNumeroBarillet(num) {
             const cercle = document.getElementById("Br" + num);
 		cercle.setAttribute("fill", "red");
 
-            // Vérifier si cette chambre est la chambre rouge
-            if (num === chambreRouge) {
-                alert("Perdu !");
-            } else {
-                cercle.setAttribute("fill", "green");
-                alert("Gagné !");
-            }
+        
         }
 </script>
 
