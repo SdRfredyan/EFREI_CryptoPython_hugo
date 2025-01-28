@@ -79,8 +79,8 @@ def jeu():
 def img():
     return render_template('Outils_JS.html')
   
-@app.route('/bibliotheque_images')
-def img():
+@app.route('/russe')
+def russe():
     return render_template('Roulette_Russe_Etape_1_Barillet_Vide.html')
 
   
