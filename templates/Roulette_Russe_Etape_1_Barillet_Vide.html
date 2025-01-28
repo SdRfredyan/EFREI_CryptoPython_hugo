@@ -9,6 +9,11 @@
         let gains = 0; // Total des gains du joueur
         let pastilleBleue = null; // Référence à la chambre bleue
 
+        function afficherGains() {
+            // Met à jour l'affichage des gains
+            document.getElementById("gains").textContent = "Total des gains : " + gains.toLocaleString() + "€";
+        }
+
         function lancer() {
             if (chambresSelectionnees < 1) {
                 alert("Vous devez sélectionner au moins 1 chambre avant de lancer !");
@@ -45,8 +50,11 @@
                 else if (chambresSelectionnees === 3) gainTour = 1000000;
 
                 gains += gainTour; // Ajouter les gains du tour au total
-                alert("Félicitations ! Vous avez gagné " + gainTour.toLocaleString() + "€ ! Total des gains : " + gains.toLocaleString() + "€");
+                alert("Félicitations ! Vous avez gagné " + gainTour.toLocaleString() + "€ !");
             }
+
+            // Mettre à jour l'affichage des gains
+            afficherGains();
         }
 
         function afficherNumeroBarillet(num) {
