@@ -6,9 +6,10 @@ function lancer(){
 }
 
 function afficherNumeroBarillet(num){
-
-	
-	  alert("il sagit de la chambre : " +num);
+	alert("il sagit de la chambre : " +num);
+	const cercle = document.getElementById("Br" + numero);
+	cercle.setAttribute("fill", "red");
+		
 }
 </script>
 
@@ -19,7 +20,7 @@ function afficherNumeroBarillet(num){
 
 	<svg width=200 height=200 style="background-color:antiquewhite">
 	<circle cx="100" cy="100" r="95" stroke="black" stroke-width="3" fill="none" />
-	<circle id="Br1" cx="100" cy="40" r="25" stroke="black" stroke-width="3" fill="gray" onclick="afficherNumeroBarillet(1)"/>
+	<circle id="Br1" cx="100" cy="40" r="25" stroke="black" stroke-width="3" fill="gray" onclick="afficherNumeroBarillet(1)" onclick=/>
 	<circle id="Br2" cx="150" cy="70" r="25" stroke="black" stroke-width="3" fill="gray" onclick="afficherNumeroBarillet(2)"/>
 	<circle id="Br3" cx="50" cy="70" r="25" stroke="black" stroke-width="3" fill="gray" onclick="afficherNumeroBarillet(3)"/>
 	<circle id="Br4" cx="50" cy="130" r="25" stroke="black" stroke-width="3" fill="gray" onclick="afficherNumeroBarillet(4)"/>
