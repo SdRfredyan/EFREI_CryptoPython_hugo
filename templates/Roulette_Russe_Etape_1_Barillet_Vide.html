@@ -5,23 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Roulette Russe</title>
     <script>
-        let chambresSelectionnees = 0; // Compteur des chambres sélectionnées
+        let chambresSelectionnees = 0; // Compteur des chambres rouges sélectionnées
+        let gains = 0; // Total des gains du joueur
 
         function lancer() {
-           
-            // Générer un chiffre aléatoire entre 1 et 6
-            const chiffre = Math.floor(Math.random() * 6) + 1;
-            alert("Le barillet tourne... Chambre sélectionnée : " + chiffre);
-
-            // Vérifier la couleur de la chambre sélectionnée
-            const chambre = document.getElementById("Br" + chiffre);
-            const couleur = chambre.getAttribute("fill"); // Récupérer la couleur de remplissage
-
-            if (couleur === "red") {
-                alert("Perdu !");
-            } else {
-                alert("Gagné !");
+            if (chambresSelectionnees < 1) {
+                alert("Vous devez sélectionner au moins 1 chambre avant de lancer !");
+                return;
             }
+
+            // Générer un chiffre aléatoire entre 1 et 6 pour la pastille bleue
+            const chambreBleue = Math.floor(Math.random() * 6) + 1;
+            alert("Le barillet tourne... La pastille bleue est sur la chambre : " + chambreBleue);
+
+            // Identifier la chambre où la pastille bleue est placée
+            const chambre = document.getElementById("Br" + chambreBleue);
+            const couleur = chambre.getAttribute("fill");
+
+            // Vérifier les conditions de victoire ou de défaite
+            if (couleur === "red") {
+                alert("La pastille bleue s'est positionnée sur une chambre rouge. Vous avez perdu !");
+                gains = 0; // Réinitialisation des gains en cas de défaite
+            } else if (couleur === "gray") {
+                // Calculer les gains selon le nombre de pastilles rouges placées
+                let gainTour = 0;
+                if (chambresSelectionnees === 1) gainTour = 10000;
+                else if (chambresSelectionnees === 2) gainTour = 100000;
+                else if (chambresSelectionnees === 3) gainTour = 1000000;
+
+                gains += gainTour; // Ajouter les gains du tour au total
+                alert("Félicitations ! Vous avez gagné " + gainTour.toLocaleString() + "€ ! Total des gains : " + gains.toLocaleString() + "€");
+            }
+
+            // Positionner la pastille bleue sur le barillet
+            chambre.setAttribute("fill", "blue");
         }
 
         function afficherNumeroBarillet(num) {
@@ -47,8 +64,8 @@
             }
         }
 
-function rejouer() {
-    // Réinitialiser les couleurs de toutes les chambres
+        function rejouer() {
+            // Réinitialiser les couleurs de toutes les chambres
             for (let i = 1; i <= 6; i++) {
                 const cercle = document.getElementById("Br" + i);
                 cercle.setAttribute("fill", "gray");
@@ -57,9 +74,8 @@ function rejouer() {
             // Réinitialiser le compteur des chambres sélectionnées
             chambresSelectionnees = 0;
 
-            alert("Le jeu a été réinitialisé !");
+            alert("Le jeu a été réinitialisé ! Vous pouvez rejouer.");
         }
-        
     </script>
 </head>
 <body>
@@ -78,5 +94,7 @@ function rejouer() {
 
     <button onclick="lancer()">Jouer</button>
     <button onclick="rejouer()">Rejouer</button>
+
+    <p id="gains">Total des gains : <strong>0€</strong></p>
 </body>
 </html>
