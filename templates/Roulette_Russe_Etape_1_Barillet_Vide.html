@@ -23,14 +23,22 @@
         }
 
         function afficherNumeroBarillet(num) {
+            const cercle = document.getElementById("Br" + num);
+            const couleur = cercle.getAttribute("fill"); // Récupérer la couleur de remplissage
+            
+            if(cercle === "gray"){
              if (chambresSelectionnees >= 3) {
                 alert("Vous avez déjà sélectionné 3 chambres !");
                 return;
             }
             alert("Vous avez sélectionné la chambre : " + num);
-            const cercle = document.getElementById("Br" + num);
             cercle.setAttribute("fill", "red"); // Remplir la chambre sélectionnée en rouge
             chambresSelectionnees++;
+        }
+            if(cercle === "red"){
+                 cercle.setAttribute("fill", "gray"); // Remplir la chambre sélectionnée en rouge
+                        }
+            
         }
     </script>
 </head>
