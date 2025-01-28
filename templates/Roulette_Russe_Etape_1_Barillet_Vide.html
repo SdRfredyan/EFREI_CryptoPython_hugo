@@ -5,8 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Roulette Russe</title>
     <script>
-         let chambresSelectionnees = 0;
+        let chambresSelectionnees = 0; // Compteur des chambres sélectionnées
+
         function lancer() {
+            if (chambresSelectionnees < 3) {
+                alert("Vous devez sélectionner 3 chambres avant de lancer !");
+                return;
+            }
+
             // Générer un chiffre aléatoire entre 1 et 6
             const chiffre = Math.floor(Math.random() * 6) + 1;
             alert("Le barillet tourne... Chambre sélectionnée : " + chiffre);
@@ -24,21 +30,25 @@
 
         function afficherNumeroBarillet(num) {
             const cercle = document.getElementById("Br" + num);
-            const couleur = cercle.getAttribute("fill"); // Récupérer la couleur de remplissage
-            
-            if(cercle === "gray"){
-             if (chambresSelectionnees >= 3) {
-                alert("Vous avez déjà sélectionné 3 chambres !");
-                return;
+            const couleur = cercle.getAttribute("fill"); // Récupérer la couleur actuelle du cercle
+
+            if (couleur === "red") {
+                // Désélectionner la chambre si elle est déjà rouge
+                cercle.setAttribute("fill", "gray");
+                chambresSelectionnees--;
+                alert("Chambre " + num + " désélectionnée.");
+            } else if (couleur === "gray") {
+                // Vérifier si le joueur a déjà sélectionné 3 chambres
+                if (chambresSelectionnees >= 3) {
+                    alert("Vous avez déjà sélectionné 3 chambres !");
+                    return;
+                }
+
+                // Sélectionner la chambre
+                cercle.setAttribute("fill", "red");
+                chambresSelectionnees++;
+                alert("Vous avez sélectionné la chambre : " + num);
             }
-            alert("Vous avez sélectionné la chambre : " + num);
-            cercle.setAttribute("fill", "red"); // Remplir la chambre sélectionnée en rouge
-            chambresSelectionnees++;
-        }
-            else(cercle === "red"){
-                 cercle.setAttribute("fill", "gray"); // Remplir la chambre sélectionnée en rouge
-                        }
-            
         }
     </script>
 </head>
